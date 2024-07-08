@@ -42,10 +42,11 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        if (lang === null || lang === 'en')
+        if (lang === null || lang === 'en') {
             setLanguage('en');
-        else
+        } else {
             setLanguage('nl');
+        }
 
         setLoaded(true);
     }, [lang])
@@ -65,18 +66,18 @@ const Navbar = () => {
                                 const width = document?.getElementById(item.id + 'navbar')?.offsetWidth;
 
                                 return (
-                                    <motion.li 
-                                      key={item.id} 
-                                      className="p-4 group cursor-pointer"
-                                      onHoverStart={() => setCurrentIdx(index)}
-                                      onHoverEnd={() => setCurrentIdx(-1)}
-                                      onClick={() => {
-                                        if (document.getElementById(item.id)) {
-                                            document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-                                        } else {
-                                            router.push(`/${item.path}`);
-                                        }
-                                      }}
+                                    <motion.li
+                                        key={item.id}
+                                        className="p-4 group cursor-pointer"
+                                        onHoverStart={() => setCurrentIdx(index)}
+                                        onHoverEnd={() => setCurrentIdx(-1)}
+                                        onClick={() => {
+                                            if (document.getElementById(item.id)) {
+                                                document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+                                            } else {
+                                                router.push(`/${item.path}`);
+                                            }
+                                        }}
                                     >
                                         <div id={item.id + 'navbar'} className='group-hover:text-light-theme/75 group-hover:dark:text-dark-theme/75'>
                                             {item.name}
@@ -84,13 +85,13 @@ const Navbar = () => {
                                                 {index === currentIdx &&
                                                     <svg height="3px" viewBox={`0 0 ${width !== undefined ? width / 3 : 0} 1`} xmlns="http://www.w3.org/2000/svg" className="absolute">
                                                         <motion.line x1="0" y1="0" x2="100%" y2="0" stroke="rgba(203, 36, 255, 0.75)" strokeWidth={3}
-                                                          initial="hidden"
-                                                          animate="visible"
-                                                          exit="hidden"
-                                                          variants={{
-                                                            hidden: { pathLength: 0, transition: { duration: 0.5 } },
-                                                            visible: { pathLength: 1, transition: { duration: 0.5 }}
-                                                          }}
+                                                            initial="hidden"
+                                                            animate="visible"
+                                                            exit="hidden"
+                                                            variants={{
+                                                                hidden: { pathLength: 0, transition: { duration: 0.5 } },
+                                                                visible: { pathLength: 1, transition: { duration: 0.5 } }
+                                                            }}
                                                         />
                                                     </svg>}
                                             </AnimatePresence>
@@ -108,26 +109,26 @@ const Navbar = () => {
                     </ul>
 
                     <div className="flex justify-between lg:hidden mt-[-4px]">
-                        <motion.div 
-                          className={`mt-[3px] mr-2 z-10 ${textColor}`}
-                          initial='hidden'
-                          animate='visible'
-                          variants={{
-                            hidden: { y: -100 },
-                            visible: { y: 0 }
-                          }}
+                        <motion.div
+                            className={`mt-[3px] mr-2 z-10 ${textColor}`}
+                            initial='hidden'
+                            animate='visible'
+                            variants={{
+                                hidden: { y: -100 },
+                                visible: { y: 0 }
+                            }}
                         >
                             {!open && <ThemeChanger />}
                         </motion.div>
-                        <motion.div 
-                          className={`mx-2 z-10 cursor-pointer ${textColor}`} 
-                          onClick={() => setOpen(true)}
-                          initial='hidden'
-                          animate='visible'
-                          variants={{
-                            hidden: { y: -100 },
-                            visible: { y: 0 }
-                          }}
+                        <motion.div
+                            className={`mx-2 z-10 cursor-pointer ${textColor}`}
+                            onClick={() => setOpen(true)}
+                            initial='hidden'
+                            animate='visible'
+                            variants={{
+                                hidden: { y: -100 },
+                                visible: { y: 0 }
+                            }}
                         >
                             {!open && <AiOutlineMenu size={22} className="w-5 sm:w-6 md:h-6 md:ml-1" />}
                         </motion.div>
@@ -136,11 +137,11 @@ const Navbar = () => {
                     {open && (
                         <div className="fixed lg:hidden left-0 top-0 w-full h-screen bg-black/50" />
                     )}
-                    
+
                     <div className="flex fixed lg:hidden left-0 top-0">
                         <AnimatePresence>
                             {open && (
-                                <motion.div 
+                                <motion.div
                                     className="flex relative left-0 top-0 flex-col w-[280px] sm:w-[320px] h-screen bg-white dark:bg-dark-primary px-3 sm:px-4 py-1"
                                     initial={{ x: -320 }}
                                     animate={{ x: 0 }}
@@ -150,8 +151,8 @@ const Navbar = () => {
                                     <div className="relative flex w-full items-center justify-between pb-1">
                                         <div className="w-[140px] sm:w-[170px]">
                                             <Logo color='#cb24ff' animate='none' />
-                                        </div>    
-                                        <div 
+                                        </div>
+                                        <div
                                             className="mb-4 p-1 rounded-full shadow-md shadow-dark-400 dark:shadow-dark-900 dark:bg-dark-tertiary cursor-pointer"
                                             onClick={() => setOpen(false)}
                                         >
@@ -160,40 +161,39 @@ const Navbar = () => {
                                     </div>
                                     <ul className="text-dark-900 uppercase pt-4">
                                         {navItems.map((item, index) => {
-                                            if (loaded)
-                                            {
+                                            if (loaded) {
                                                 const width = document.getElementById(item.id + 'nav')?.offsetWidth;
 
                                                 return (
                                                     <motion.li
-                                                      key={item.id}
-                                                      className="py-2 sm:py-4"  
-                                                      onHoverStart={() => setCurrentIdx(index)}
-                                                      onHoverEnd={() => setCurrentIdx(-1)}>
+                                                        key={item.id}
+                                                        className="py-2 sm:py-4"
+                                                        onHoverStart={() => setCurrentIdx(index)}
+                                                        onHoverEnd={() => setCurrentIdx(-1)}>
                                                         <a
-                                                          id={item.id + 'nav'}
-                                                          className="sm:text-xl cursor-pointer hover:text-dark-100"
-                                                          onClick={() => {
-                                                            if (document.getElementById(item.id))
-                                                              document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-                                                            else
-                                                              router.push(`/${item.path}`);
+                                                            id={item.id + 'nav'}
+                                                            className="sm:text-xl cursor-pointer hover:text-dark-100"
+                                                            onClick={() => {
+                                                                if (document.getElementById(item.id))
+                                                                    document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+                                                                else
+                                                                    router.push(`/${item.path}`);
 
-                                                            setOpen(false)
-                                                          }}
+                                                                setOpen(false)
+                                                            }}
                                                         >
                                                             {item.name}
                                                             <AnimatePresence>
                                                                 {index === currentIdx &&
                                                                     <svg height="3px" viewBox={`0 0 ${width !== undefined ? width / 3 : 0} 1`} xmlns="http://www.w3.org/2000/svg" className="absolute">
                                                                         <motion.line x1="0" y1="0" x2="100%" y2="0" stroke="rgba(203, 36, 255, 0.75)" strokeWidth={3}
-                                                                          initial="hidden"
-                                                                          animate="visible"
-                                                                          exit="hidden"
-                                                                          variants={{
-                                                                            hidden: { pathLength: 0, transition: { duration: 0.5 } },
-                                                                            visible: { pathLength: 1, transition: { duration: 0.5 }}
-                                                                          }}
+                                                                            initial="hidden"
+                                                                            animate="visible"
+                                                                            exit="hidden"
+                                                                            variants={{
+                                                                                hidden: { pathLength: 0, transition: { duration: 0.5 } },
+                                                                                visible: { pathLength: 1, transition: { duration: 0.5 } }
+                                                                            }}
                                                                         />
                                                                     </svg>}
                                                             </AnimatePresence>
@@ -209,28 +209,28 @@ const Navbar = () => {
                                     <div className=" w-[280px] sm:w-[320px] text-slate-900 absolute bottom-0 left-0">
                                         <p className="uppercase sm:text-xl pl-4 text-light-theme dark:text-dark-theme">{getInTouch}</p>
                                         <div className="flex items-center justify-between w-full mb-2 px-2 sm:px-0">
-                                            <a 
-                                              target="_blank"  
-                                              href="https://www.linkedin.com/in/timen-van-gelderen/"
-                                              onClick={() => setOpen(false)}
-                                              className="rounded-full p-2 m-2 sm:p-3 sm:m-4 shadow-md shadow-dark-500 dark:shadow-dark-900 dark:bg-dark-tertiary hover:scale-110"
+                                            <a
+                                                target="_blank"
+                                                href="https://www.linkedin.com/in/timen-van-gelderen/"
+                                                onClick={() => setOpen(false)}
+                                                className="rounded-full p-2 m-2 sm:p-3 sm:m-4 shadow-md shadow-dark-500 dark:shadow-dark-900 dark:bg-dark-tertiary hover:scale-110"
                                             >
                                                 <BsLinkedin size={20} className="w-4 h-4 sm:w-5 sm:h-5" />
                                             </a>
-                                            <a  
-                                              target="_blank" 
-                                              href="https://github.com/TvGelderen"
-                                              onClick={() => setOpen(false)}
-                                              className="rounded-full p-2 m-2 sm:p-3 sm:m-4 shadow-md shadow-dark-500 dark:shadow-dark-900 dark:bg-dark-tertiary hover:scale-110"
+                                            <a
+                                                target="_blank"
+                                                href="https://github.com/TvGelderen"
+                                                onClick={() => setOpen(false)}
+                                                className="rounded-full p-2 m-2 sm:p-3 sm:m-4 shadow-md shadow-dark-500 dark:shadow-dark-900 dark:bg-dark-tertiary hover:scale-110"
                                             >
                                                 <BsGithub size={20} className="w-4 h-4 sm:w-5 sm:h-5" />
                                             </a>
-                                            <a  
-                                              onClick={() => {
-                                                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                                                setOpen(false);
-                                              }}
-                                              className="rounded-full p-2 m-2 sm:p-3 sm:m-4 shadow-md shadow-dark-500 dark:shadow-dark-900 dark:bg-dark-tertiary hover:scale-110"
+                                            <a
+                                                onClick={() => {
+                                                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                                                    setOpen(false);
+                                                }}
+                                                className="rounded-full p-2 m-2 sm:p-3 sm:m-4 shadow-md shadow-dark-500 dark:shadow-dark-900 dark:bg-dark-tertiary hover:scale-110"
                                             >
                                                 <AiOutlineMail size={20} className="w-4 h-4 sm:w-5 sm:h-5" />
                                             </a>

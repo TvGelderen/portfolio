@@ -1,19 +1,15 @@
 export const SkillData = [
     {
+        name: "C",
+        image: "/img/skills/c.png"
+    },
+    {
         name: "C++",
         image: "/img/skills/c++.png"
     },
     {
         name: "C#",
         image: "/img/skills/csharp.png"
-    },
-    {
-        name: "HTML",
-        image: "/img/skills/html.png"
-    },
-    {
-        name: "CSS",
-        image: "/img/skills/css.png"
     },
     {
         name: "JavaScript",
@@ -28,6 +24,18 @@ export const SkillData = [
         image: "/img/skills/go.png"
     },
     {
+        name: "HTML",
+        image: "/img/skills/html.png"
+    },
+    {
+        name: "CSS",
+        image: "/img/skills/css.png"
+    },
+    {
+        name: ".NET",
+        image: "/img/skills/dotnet.png"
+    },
+    {
         name: "Nuxt",
         image: "/img/skills/nuxt.png"
     },
@@ -37,11 +45,7 @@ export const SkillData = [
     },
     {
         name: "Next.js",
-        image: "/img/skills/nextjs2.png"
-    },
-    {
-        name: "Bootstrap",
-        image: "/img/skills/bootstrap.png"
+        image: "/img/skills/nextjs.png"
     },
     {
         name: "Tailwind CSS",
@@ -52,7 +56,11 @@ export const SkillData = [
         image: "/img/skills/firebase.png"
     },
     {
-        name: "ASP.NET",
-        image: "/img/skills/asp_net.png"
+        name: "Elasticsearch",
+        image: "/img/skills/elasticsearch.png"
+    },
+    {
+        name: "Docker",
+        image: "/img/skills/docker.png"
     },
 ]

@@ -1,31 +1,5 @@
 export const ProjectData = [
   {
-    id: "film-finder",
-    name: "FilmFinder",
-    images: ["https://i.imgur.com/GcGJTZJ.png"],
-    githubURL: "https://github.com/TvGelderen/film-finder",
-    liveURL: "https://film-finder.tvgelderen.nl/",
-    skills: ["TypeScript", "Nuxt", "Go"],
-    content: new Map([
-      [
-        "en",
-        {
-          brief_description:
-            "A web app for searching and saving movies. The frontend uses Nuxt and uses the API from The Movie Database to fetch the movie data. A seperate backend has been written in Go to handle the user management and authentication, user data is stored in a PostgreSQL database.",
-          description: "",
-        },
-      ],
-      [
-        "nl",
-        {
-          brief_description:
-            "Een web app voor het zoeken en bewaren van films. De frontend maakt gebruik van Nuxt en de API van The Movie Database voor het ophalen van de film data. Er is een aparte backend geschreven in Go voor het aanmaken en authenticeren van gebruikers, de gebruikersgegevens worden opgeslagen in een PostgreSQL database.",
-          description: "",
-        },
-      ],
-    ]),
-  },
-  {
     id: "netflix-clone",
     name: "Netflix Clone",
     images: [
